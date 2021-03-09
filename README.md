@@ -17,8 +17,9 @@ Fast and accurate reconstruction of magnetic resonance (MR) images from under-sa
 # Run
 
 ## train FL-MR
-
+```bash 
 >python main_fl_mr.py --phase train --dataset mri --model unet --epochs 50 --challenge singlecoil --local_bs 16 --num_users 4 --local_ep 2 --train_dataset BFHI --test_dataset H --sequence T1  --accelerations 4 --center-fractions 0.08 --val_sample_rate 1.0 --save_dir 'Dir for saving checkpoints' --verbose
+```
 
 ## train FL-MRCM
 
