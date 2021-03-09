@@ -16,7 +16,9 @@ Fast and accurate reconstruction of magnetic resonance (MR) images from under-sa
 
 # Run
 
+## train FL-MR
 
+## train FL-MRCM
 
 # Citation
 
