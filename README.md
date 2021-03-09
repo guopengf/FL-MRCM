@@ -35,10 +35,11 @@ We give acknowledgements to [fastMRI](https://github.com/facebookresearch/fastMR
 
 
 # Citation
-
+```bash
 @article{guo2021multi,
   title={Multi-institutional Collaborations for Improving Deep Learning-based Magnetic Resonance Image Reconstruction Using Federated Learning},
   author={Guo, Pengfei and Wang, Puyang and Zhou, Jinyuan and Jiang, Shanshan and Patel, Vishal M},
   journal={arXiv preprint arXiv:2103.02148},
   year={2021}
 }
+```
