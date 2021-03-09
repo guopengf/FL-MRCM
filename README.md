@@ -32,7 +32,7 @@ Fast and accurate reconstruction of magnetic resonance (MR) images from under-sa
 ```
 # Ackonwledgements
 
-We give acknowledgements to [fastMRI](https://github.com/facebookresearch/fastMRI) and [Federated Learning](https://github.com/shaoxiongji/federated-learning).
+We give acknowledgements to [fastMRI](https://github.com/facebookresearch/fastMRI), [Federated Learning](https://github.com/shaoxiongji/federated-learning), and [Federated Adversarial Domain Adaptation](https://openreview.net/forum?id=HJezF3VYPB).
 
 
 # Citation
