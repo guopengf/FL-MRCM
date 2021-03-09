@@ -7,7 +7,7 @@ The code will be released soon.
 
 # Requirements
 
-python>=3.6  
+python=3.6  
 pytorch=1.4.0
 
 # Inroduction
