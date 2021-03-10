@@ -15,6 +15,27 @@ pytorch=1.4.0
 
 Fast and accurate reconstruction of magnetic resonance (MR) images from under-sampled data is important in many clinical applications. In recent years, deep learning-based methods have been shown to produce superior performance on MR image reconstruction. However, these methods require large amounts of data which is difficult to collect and share due to the high cost of acquisition and medical data privacy regulations. In order to overcome this challenge, we propose a federated learning (FL) based solution in which we take advantage of the MR data available at different institutions while preserving patients' privacy. However, the generalizability of models trained with the FL setting can still be suboptimal due to domain shift, which results from the data collected at multiple institutions with different sensors, disease types, and acquisition protocols, etc. With the motivation of circumventing this challenge, we propose a cross-site modeling for MR image reconstruction in which the learned intermediate latent features among different source sites are aligned with the distribution of the latent features at the target site. Extensive experiments are conducted to provide various insights about FL for MR image reconstruction. Experimental results demonstrate that the proposed framework is a promising direction to utilize multi-institutional data without compromising patients' privacy for achieving improved MR image reconstruction. 
 
+## Dataset Preparation
+
+Prepare the dataset in the following format for easy use of the code. The train and test folders should contain two subfolders each: img and label. Make sure the images their corresponding segmentation masks are placed under these folders and have the same name for easy correspondance. Please change the data loaders to your need if you prefer not preparing the dataset in this format.
+
+```bash
+
+
+                   |-- T1 
+                   |                       
+                   |                |--xxx.h5  
+Dataset Folder-----|      |--train--|...
+                   |      |         |...
+                   |      |
+                   |      |         |--xxx.h5 
+                   |-- T2-|-- val --|...  
+                          |         |...
+                          |
+                          |         |--xxx.h5
+                          |--test --|...
+```
+
 # Run
 
 ## train FL-MR
