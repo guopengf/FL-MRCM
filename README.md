@@ -17,7 +17,7 @@ Fast and accurate reconstruction of magnetic resonance (MR) images from under-sa
 
 ## Dataset Preparation
 
-Prepare the dataset in the following format for easy use of the code. The train and test folders should contain two subfolders each: img and label. Make sure the images their corresponding segmentation masks are placed under these folders and have the same name for easy correspondance. Please change the data loaders to your need if you prefer not preparing the dataset in this format.
+Prepare the dataset in the following structure for easy use of the code.The provided data loaders is ready for this this format and you may change it as your need.
 
 ```bash
 
