@@ -19,16 +19,19 @@ Fast and accurate reconstruction of magnetic resonance (MR) images from under-sa
 
 ## train FL-MR
 ```bash 
->python main_fl_mr.py --phase train --dataset mri --model unet --epochs 50 --challenge singlecoil --local_bs 16 --num_users 4 --local_ep 2 --train_dataset BFHI --test_dataset H --sequence T1  --accelerations 4 --center-fractions 0.08 --val_sample_rate 1.0 --save_dir 'Dir path for saving checkpoints' --verbose
+python main_fl_mr.py --phase train --dataset mri --model unet --epochs 50 --challenge singlecoil --local_bs 16 --num_users 4 --local_ep 2 --train_dataset BFHI --test_dataset H --sequence T1  --accelerations 4 --center-fractions 0.08 --val_sample_rate 1.0 --save_dir 'Dir path for saving checkpoints' --verbose
 ```
-
 ## train FL-MRCM
 ```bash 
->python main_fl_mrcm.py --phase train --dataset mri --model unet --epochs 50 --challenge singlecoil --local_bs 16 --num_users 4 --local_ep 2 --train_dataset BFHI --test_dataset B --sequence T1 --accelerations 4 --center-fractions 0.08 --val_sample_rate 1.0 --save_dir 'Dir path for saving checkpoints' --verbose
+python main_fl_mrcm.py --phase train --dataset mri --model unet --epochs 50 --challenge singlecoil --local_bs 16 --num_users 4 --local_ep 2 --train_dataset BFHI --test_dataset B --sequence T1 --accelerations 4 --center-fractions 0.08 --val_sample_rate 1.0 --save_dir 'Dir path for saving checkpoints' --verbose
+```
+## monitor the traning process
+```bash 
+tensorboard --logdir 'Dir path for saving checkpoints'
 ```
 ## test
 ```bash 
->python main_test.py --phase test --dataset mri --challenge singlecoil --local_bs 16 --model unet --test_dataset I --sequence T1 --accelerations 4 --center-fractions 0.08 --save_dir 'Dir path for saving checkpoints'  --checkpoint 'checkpoint path for testing'  --verbose
+python main_test.py --phase test --dataset mri --challenge singlecoil --local_bs 16 --model unet --test_dataset I --sequence T1 --accelerations 4 --center-fractions 0.08 --save_dir 'Dir path for saving checkpoints'  --checkpoint 'checkpoint path for testing'  --verbose
 ```
 # Ackonwledgements
 
