@@ -10,18 +10,6 @@ import numpy as np
 from torch.autograd import Variable
 from torch.nn import functional as F
 
-class DatasetSplit(Dataset):
-    def __init__(self, dataset, idxs):
-        self.dataset = dataset
-        self.idxs = list(idxs)
-
-    def __len__(self):
-        return len(self.idxs)
-
-    def __getitem__(self, item):
-        input, target, mean, std, fname, slice = self.dataset[self.idxs[item]]
-        return input, target, mean, std, fname, slice
-
 
 class LocalUpdate(object):
     def __init__(self, args, device, dataset=None):
