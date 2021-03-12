@@ -30,7 +30,7 @@ class LocalUpdate(object):
             batch_loss = []
             iter_data_time = time.time()
             for batch_idx, batch in enumerate(self.ldr_train):
-                input, target, mean, _, std, fname, slice = batch
+                input, target, mean, std, norm, fname, slice = batch
                 net.zero_grad()
                 output = net(input.to(self.device))
                 loss = self.loss_func(output, target.to(self.device))
