@@ -61,7 +61,7 @@ tensorboard --logdir 'Dir path for saving checkpoints'
 ```
 ## test
 ```bash 
-python main_test.py --phase test --dataset mri --challenge singlecoil --local_bs 16 --model unet --test_dataset I --sequence T1 --accelerations 4 --center-fractions 0.08 --save_dir 'Dir path for saving checkpoints'  --checkpoint 'checkpoint path for testing'  --verbose
+python main_test.py --phase test --dataset mri --challenge singlecoil --local_bs 16 --model unet --test_dataset I --sequence T1 --accelerations 4 --center-fractions 0.08 --save_dir 'Dir path for saving result'  --checkpoint 'checkpoint path for testing'  --verbose
 ```
 # Ackonwledgements
 
