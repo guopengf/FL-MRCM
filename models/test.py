@@ -170,41 +170,42 @@ class evaluator_normal(object):
         net_g.eval()
         # testing
         test_logs = []
-        for idx, batch in enumerate(self.data_loader):
-            input, target, mean, std,_, fname, slice = batch
-            output = net_g(input.to(self.device))
-            # sum up batch loss
-            test_loss = F.l1_loss(output, target.to(self.device))
-            mean = mean.unsqueeze(1).unsqueeze(2).to(self.device)
-            std = std.unsqueeze(1).unsqueeze(2).to(self.device)
-            test_logs.append({
-                'fname': fname,
-                'slice': slice,
-                'output': (output * std + mean).cpu().detach().numpy(),
-                'target': (target.to(self.device) * std + mean).cpu().numpy(),
-                'loss': test_loss.cpu().detach().numpy(),
-            })
-        losses = []
-        outputs = defaultdict(list)
-        targets = defaultdict(list)
-        for log in test_logs:
-            losses.append(log['loss'])
-            for i, (fname, slice) in enumerate(zip(log['fname'], log['slice'])):
-                outputs[fname].append((slice, log['output'][i]))
-                targets[fname].append((slice, log['target'][i]))
-        print('loss len: ', len(losses))
-        metrics = dict(val_loss=losses, nmse=[], ssim=[], psnr=[])
-        for fname in outputs:
-            output = np.stack([out for _, out in sorted(outputs[fname])])
-            target = np.stack([tgt for _, tgt in sorted(targets[fname])])
-            metrics['nmse'].append(evaluate.nmse(target, output))
-            metrics['ssim'].append(evaluate.ssim(target, output))
-            metrics['psnr'].append(evaluate.psnr(target, output))
-        metrics = {metric: np.mean(values) for metric, values in metrics.items()}
-        print(metrics, '\n')
-        print('No. Slices: ', len(outputs))
-        if self.writer != None:
-            self.writer.add_scalar('Dev_Loss/NMSE', metrics['nmse'], epoch)
-            self.writer.add_scalar('Dev_Loss/SSIM', metrics['ssim'], epoch)
-            self.writer.add_scalar('Dev_Loss/PSNR', metrics['psnr'], epoch)
-        torch.cuda.empty_cache()
+        with torch.no_grad():
+            for idx, batch in enumerate(self.data_loader):
+                input, target, mean, std,_, fname, slice = batch
+                output = net_g(input.to(self.device))
+                # sum up batch loss
+                test_loss = F.l1_loss(output, target.to(self.device))
+                mean = mean.unsqueeze(1).unsqueeze(2).to(self.device)
+                std = std.unsqueeze(1).unsqueeze(2).to(self.device)
+                test_logs.append({
+                    'fname': fname,
+                    'slice': slice,
+                    'output': (output * std + mean).cpu().detach().numpy(),
+                    'target': (target.to(self.device) * std + mean).cpu().numpy(),
+                    'loss': test_loss.cpu().detach().numpy(),
+                })
+            losses = []
+            outputs = defaultdict(list)
+            targets = defaultdict(list)
+            for log in test_logs:
+                losses.append(log['loss'])
+                for i, (fname, slice) in enumerate(zip(log['fname'], log['slice'])):
+                    outputs[fname].append((slice, log['output'][i]))
+                    targets[fname].append((slice, log['target'][i]))
+            print('loss len: ', len(losses))
+            metrics = dict(val_loss=losses, nmse=[], ssim=[], psnr=[])
+            for fname in outputs:
+                output = np.stack([out for _, out in sorted(outputs[fname])])
+                target = np.stack([tgt for _, tgt in sorted(targets[fname])])
+                metrics['nmse'].append(evaluate.nmse(target, output))
+                metrics['ssim'].append(evaluate.ssim(target, output))
+                metrics['psnr'].append(evaluate.psnr(target, output))
+            metrics = {metric: np.mean(values) for metric, values in metrics.items()}
+            print(metrics, '\n')
+            print('No. Slices: ', len(outputs))
+            if self.writer != None:
+                self.writer.add_scalar('Dev_Loss/NMSE', metrics['nmse'], epoch)
+                self.writer.add_scalar('Dev_Loss/SSIM', metrics['ssim'], epoch)
+                self.writer.add_scalar('Dev_Loss/PSNR', metrics['psnr'], epoch)
+            torch.cuda.empty_cache()
