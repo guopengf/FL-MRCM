@@ -17,7 +17,6 @@ from data.mri_data import SliceData, DataTransform
 from data.subsample import create_mask_for_mask_type
 from models.unet_model import UnetModel_ad_da, Feature_discriminator
 from tensorboardX import SummaryWriter
-from pympler import muppy, summary
 import pathlib
 
 if __name__ == '__main__':
@@ -63,9 +62,6 @@ if __name__ == '__main__':
             seed=seed
         )
         return dataset
-
-    all_objects = muppy.get_objects()
-    sum = summary.summarize(all_objects)
 
     # load dataset and split users
     if args.dataset == 'mri':
@@ -173,11 +169,6 @@ if __name__ == '__main__':
             w_glob = FedAvg(w_locals)
             # copy weight to net_glob
             net_glob.load_state_dict(w_glob)
-            # track memory leaking
-            all_objects = muppy.get_objects()
-            sum = summary.summarize(all_objects)[:10]
-            for item in sum:
-                writer.add_scalar('Memory/'+ item[0], item[2], iter)
             # print loss
             loss_avg = np.sum(loss_locals) / len(loss_locals)
             print('Round {:3d}, Average loss {:.3f}'.format(iter, loss_avg))
@@ -188,9 +179,6 @@ if __name__ == '__main__':
             print('Evaluation ...')
             validation = evaluator(dataset_val, args, writer,args.device)
             validation.evaluate_recon(net_glob,iter)
-            # empty gpu cache
-            del w_locals, loss_locals, w_glob, local, validation
-            torch.cuda.empty_cache()
         writer.close()
 
 
