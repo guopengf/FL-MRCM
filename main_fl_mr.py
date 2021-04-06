@@ -58,11 +58,7 @@ if __name__ == '__main__':
             sequence =sequence
         )
         return dataset
-
-
-    all_objects = muppy.get_objects()
-    sum = summary.summarize(all_objects)
-
+    
     # load dataset and split users
     if args.dataset == 'mri':
         mask = create_mask_for_mask_type(args.mask_type, args.center_fractions,
