@@ -40,12 +40,12 @@ class LocalUpdate(object):
                 if self.args.verbose and batch_idx % 10 == 0:
                     print('Update Epoch: {} Local: {} idx: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
                         epoch, iter, idx, batch_idx * len(input), len(self.ldr_train.dataset),
-                               100. * batch_idx / len(self.ldr_train), loss.item()))
+                               100. * batch_idx / len(self.ldr_train), loss.detach().item()))
                     t_comp = (time.time() - iter_data_time)
                     iter_data_time = time.time()
                     print('itr time: ',t_comp)
                     print('lr: ',optimizer.param_groups[0]['lr'])
-                batch_loss.append(loss.item())
+                batch_loss.append(loss.detach().item())
             epoch_loss.append(sum(batch_loss)/len(batch_loss))
         writer.add_scalar('TrainLoss/L1/'+ self.args.train_datasets[idx], sum(epoch_loss) / len(epoch_loss), epoch)
         torch.cuda.empty_cache()
@@ -146,19 +146,19 @@ class LocalUpdate_ad_da(object):
                 batch_loss_adv_g.append(loss_adv_g)
 
                 L1_loss = self.loss_func(output, target.to(self.device))
-                batch_loss_L1.append(L1_loss.item())
+                batch_loss_L1.append(L1_loss.detach().item())
                 if not self.flag:
                     loss = L1_loss + loss_adv_g
                 else:
                     loss = L1_loss
-                batch_loss.append(loss.item())
+                batch_loss.append(loss.detach().item())
                 loss.backward()
                 optimizer.step()
                 scheduler.step(epoch)
                 if self.args.verbose and batch_idx % 10 == 0:
                     print('Update Epoch: {} Local: {} idx: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
                         epoch, iter, idx, batch_idx * len(input), len(self.ldr_train.dataset),
-                               100. * batch_idx / len(self.ldr_train), loss.item()))
+                               100. * batch_idx / len(self.ldr_train), loss.detach().item()))
                     t_comp = (time.time() - iter_data_time)
                     iter_data_time = time.time()
                     print('itr time: ',t_comp)
