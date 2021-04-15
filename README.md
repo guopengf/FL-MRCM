@@ -45,6 +45,7 @@ An example of preprocessing BraTS dataset can be found at <code> utils/preproces
 3) BraTS Dataset - <a href="https://www.med.upenn.edu/cbica/brats2020/data.html"> Link </a> 
 4) HPKS dataset introduced in the paper will be made public after approval.
 
+Preprocessed Data - <a href="https://livejohnshopkins-my.sharepoint.com/:f:/r/personal/pguo4_jh_edu/Documents/cvpr_2021_data?csf=1&web=1&e=Ij81Te"> Link </a>  
 # Run
 
 ## train FL-MR
