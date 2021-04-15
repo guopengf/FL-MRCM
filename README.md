@@ -38,7 +38,7 @@ Dataset Folder-----|      |--train--|...
 ```
 An example of preprocessing BraTS dataset can be found at <code> utils/preprocess_datasets_brats.py </code>.
 
-## Links for downloading the public Datasets:
+## Links for downloading the public datasets:
 
 1) fastMRI Dataset - <a href="https://fastmri.med.nyu.edu/"> Link </a>  
 2) IXI Dataset - <a href="https://brain-development.org/ixi-dataset/"> Link </a> 
