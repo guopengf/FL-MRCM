@@ -80,3 +80,13 @@ We give acknowledgements to [fastMRI](https://github.com/facebookresearch/fastMR
   year={2021}
 }
 ```
+```bash
+@InProceedings{Guo_2021_CVPR,
+    author    = {Guo, Pengfei and Wang, Puyang and Zhou, Jinyuan and Jiang, Shanshan and Patel, Vishal M.},
+    title     = {Multi-Institutional Collaborations for Improving Deep Learning-Based Magnetic Resonance Image Reconstruction Using Federated Learning},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2021},
+    pages     = {2423-2432}
+}
+```
