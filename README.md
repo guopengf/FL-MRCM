@@ -45,8 +45,11 @@ An example of preprocessing BraTS dataset can be found at <code> utils/preproces
 3) BraTS Dataset - <a href="https://www.med.upenn.edu/cbica/brats2020/data.html"> Link </a> 
 4) HPKS dataset introduced in the paper will be made public after approval.
 
-Preprocessed Data - <a href="https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/pguo4_jh_edu/EuZHyvRlwjZFoLFNlDhJCewBuSz6n5DjcfN7yzBwI7ZF2w?e=5%3aM8irOc&at=9"> Link </a> 
+Preprocessed Data (OneDrive) - <a href="https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/pguo4_jh_edu/EuZHyvRlwjZFoLFNlDhJCewBuSz6n5DjcfN7yzBwI7ZF2w?e=5%3aM8irOc&at=9"> Link </a> 
 Password: pguo4
+
+Preprocessed Data (BaiduYun) - <a href="https://pan.baidu.com/s/1YUQbsJNFkBQ6ODC1eExkZQ"> Link </a> 
+Password: 3c2e
 
 # Run
 
