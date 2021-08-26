@@ -3,7 +3,7 @@
  <a href="https://arxiv.org/abs/2103.02148"> arXiv preprint </a> | <a href="https://sites.google.com/view/fl-mrcm/home"> Project Page </a>
 
 Pytorch Code for the paper ["Multi-institutional Collaborations for Improving Deep Learning-based Magnetic
-Resonance Image Reconstruction Using Federated Learning"](https://arxiv.org/abs/2103.02148), will be presented at CVPR 2021
+Resonance Image Reconstruction Using Federated Learning"](https://arxiv.org/abs/2103.02148) presented at CVPR 2021
 
 
 # Requirements
