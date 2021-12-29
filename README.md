@@ -52,7 +52,10 @@ Preprocessed Data (BaiduYun) - <a href="https://pan.baidu.com/s/1YUQbsJNFkBQ6ODC
 Password: 3c2e
 
 # Run
-
+## Set up conda environment
+```bash
+conda env create -f conda_environment.yml
+```
 ## train FL-MR
 ```bash 
 python main_fl_mr.py --phase train --dataset mri --model unet --epochs 50 --challenge singlecoil --local_bs 16 --num_users 4 --local_ep 2 --train_dataset BFHI --test_dataset H --sequence T1  --accelerations 4 --center-fractions 0.08 --val_sample_rate 1.0 --save_dir 'Dir path for saving checkpoints' --verbose
