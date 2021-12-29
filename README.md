@@ -52,9 +52,16 @@ Preprocessed Data (BaiduYun) - <a href="https://pan.baidu.com/s/1YUQbsJNFkBQ6ODC
 Password: 3c2e
 
 # Run
+
+## Clone this repo
+```bash
+git clone https://github.com/guopengf/FL-MRCM.git
+```
 ## Set up conda environment
 ```bash
+cd FL-MRCM
 conda env create -f conda_environment.yml
+conda activate recon
 ```
 ## train FL-MR
 ```bash 
