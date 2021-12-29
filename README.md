@@ -9,7 +9,7 @@ Resonance Image Reconstruction Using Federated Learning"](https://arxiv.org/abs/
 # Requirements
 
 python=3.6  
-pytorch=1.4.0
+1.4.0<=pytorch<=1.7.0
 
 # Inroduction
 
