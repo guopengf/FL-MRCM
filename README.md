@@ -53,11 +53,11 @@ Password: 3c2e
 
 # Run
 
-## Clone this repo
+## clone this repo
 ```bash
 git clone https://github.com/guopengf/FL-MRCM.git
 ```
-## Set up conda environment
+## set up conda environment
 ```bash
 cd FL-MRCM
 conda env create -f conda_environment.yml
