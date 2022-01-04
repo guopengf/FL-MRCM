@@ -10,6 +10,7 @@ Resonance Image Reconstruction Using Federated Learning"](https://arxiv.org/abs/
 
 python=3.6  
 1.4.0<=pytorch<=1.7.0
+
 Please refer conda_environment.yml for more dependencies.
 
 # Inroduction
