@@ -144,8 +144,8 @@ class LocalUpdate_ad_da(object):
                     df_loss_src = self.adv_loss(src_domain_pred, src_domain_code)
                     df_loss_tgt = self.adv_loss(tgt_domain_pred, tgt_domain_code)
                     loss_adv_g =((df_loss_src+df_loss_tgt)/2)
-                    loss_adv_g = loss_adv_g.detach().item()
-                batch_loss_adv_g.append(loss_adv_g)
+                    loss_adv_g = loss_adv_g
+                batch_loss_adv_g.append(loss_adv_g.detach().item())
 
                 L1_loss = self.loss_func(output, target.to(self.device))
                 batch_loss_L1.append(L1_loss.detach().item())
