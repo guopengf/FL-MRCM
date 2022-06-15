@@ -45,7 +45,7 @@ An example of preprocessing BraTS dataset can be found at <code> utils/preproces
 1) fastMRI Dataset - <a href="https://fastmri.med.nyu.edu/"> Link </a>  
 2) IXI Dataset - <a href="https://brain-development.org/ixi-dataset/"> Link </a> 
 3) BraTS Dataset - <a href="https://www.med.upenn.edu/cbica/brats2020/data.html"> Link </a> 
-4) HPKS dataset - We don't obtain the permission from Johns Hopkins Hospital to release this dataset. This dataset is available upon request which will be evaluated on a case-by-case basis.
+4) HPKS dataset - We don't obtain the permission from Johns Hopkins Hospital to release this dataset.
 
 Preprocessed Data (OneDrive) - <a href="https://livejohnshopkins-my.sharepoint.com/:f:/g/personal/pguo4_jh_edu/EuZHyvRlwjZFoLFNlDhJCewBuSz6n5DjcfN7yzBwI7ZF2w?e=5%3aM8irOc&at=9"> Link </a> 
 Password: pguo4
